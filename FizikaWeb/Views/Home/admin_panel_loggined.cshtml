@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "admin_panel_loggined";
+}
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/stylesheets/stylesheet.css")">
+    <meta charset="utf-8">
+    <link rel="SHORTCUT ICON" href=@Url.Content("~/stylesheets/img/hd.png") type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/main_js.js")"></script>
+    <title>Учебное пособие</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-center">
+                <a href="/" style="display:block;" class="cont-img">
+                    <img src="@Url.Content("~/stylesheets/img/phy.png")" id="logo" style="width: 120%; user-select: none">
+                </a>
+                <h1>
+                    <p class="logo_text" style="text-align: center; font-size: 1.2em; color: #fff;">Электронное учебное пособие по дисциплине "Физика"</p>
+                    <p class="logo_text" style="text-align: center; font-size: 0.9em; color: #fff;">панель администратора</p>
+                </h1>
+            </div>
+        </div>
+    </header>
+    <div class="admin_panel_main">
+        <p style="text-align: center; color: #fff !important;">Работа с разделами учебника</p>
+        @using (Html.BeginForm("AddRecordViewShow", "Home", FormMethod.Post))
+        {
+            <button name="addrec" class="div-menu-admin text-format">Добавить раздел</button>
+        }
+        @using (Html.BeginForm("RemoveRecord", "Home", FormMethod.Post))
+        {
+            <button name="removeRec" type="submit" class="div-menu-admin text-format">Удалить раздел</button>
+        }
+    </div>
+    </body>
+</html>

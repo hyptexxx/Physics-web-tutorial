@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@{
+    Layout = "~/Views/Shared/RenderedHeader.cshtml";
+}
+@model List<string>
+
+<!DOCTYPE html>
+
+<article>
+    <div class="main-container">
+        <div id="back-to-head" onclick="bth()">
+            <img src="@Url.Content("~/stylesheets/img/down.png")" class="back-to-head-arrow">
+        </div>
+        <div class="left-menu-container">
+            <ul>
+                <li><span class="li-span">Меню</span></li>
+                <li class="li-menu">
+                    <a href="main.html" class="a-li">
+                        <p style="position: absolute;" class="p-text">Главная</p>
+                        <div class="li-hov" class="p-text"></div>
+                    </a>
+                </li>
+                <li id="li-menu-hover-bl">
+                    <p style="position: relative;" class="div-menu-decl p-text">Разделы</p>
+                    @foreach (object q in Model)
+                    {
+                        <button onclick="doAjax(this), article_out_controller();" runat="server" id="aj" name="@q" class="div-menu text-format">"@q"</button>
+                    }
+                </li>
+                <li id="Y" class="li-menu">
+                    <a href="/test" class="a-li">
+                        <p style="position: absolute;" class="p-text">Пройти тест</p>
+                        <div class="li-hov" class="p-text"></div>
+                    </a>
+                </li>
+                <li class="li-menu">
+                    <a href="/gallery" class="a-li">
+                        <p style="position: absolute;" class="p-text">Галерея</p>
+                        <div class="li-hov" class="p-text"></div>
+                    </a>
+                </li>
+                <li class="li-menu">
+                    <a href="zadan.html" class="a-li">
+                        <p style="position: absolute;" class="p-text">Задания</p>
+                        <div class="li-hov" class="p-text"></div>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="article-container-main">
+            <div class="article-out">
+               @foreach (object q in Model)
+               {
+                   <div id="toDeleteRow" recordName="@q" onclick="removeRecord(this)">@q</div>
+               }
+            </div>
+        </div>
+        <div class="right-menu-container">
+            <li><span class="li-span">Оглавление</span></li>
+            <li class="ogl">
+                <ul id="li-count"></ul>
+            </li>
+        </div>
+</article>
+</body>
+</html>

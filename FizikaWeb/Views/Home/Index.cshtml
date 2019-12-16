@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@{
+    Layout = "~/Views/Shared/RenderedHeader.cshtml";
+}
+@model List<string>
+
+<!DOCTYPE html>
+
+<article>
+    <div class="main-container">
+        <div id="back-to-head" onclick="bth()">
+            <img src="@Url.Content("~/stylesheets/img/down.png")" class="back-to-head-arrow">
+        </div>
+        <div class="left-menu-container">
+            <ul>
+                <li><span class="li-span">Меню</span></li>
+                <li class="li-menu">
+                    <a href="main.html" class="a-li">
+                        <p style="position: absolute;" class="p-text">Главная</p>
+                        <div class="li-hov" class="p-text"></div>
+                    </a>
+                </li>
+                <li id="li-menu-hover-bl">
+                    <p style="position: relative;" class="div-menu-decl p-text">Разделы</p>
+                    @foreach (object q in Model)
+                    {
+                        <button onclick="doAjax(this), article_out_controller();" runat="server" id="aj" name="@q" class="div-menu text-format">"@q"</button>
+                    }
+
+
+                </li>
+                <li id="Y" class="li-menu">
+                    <a href="/test" class="a-li">
+                        <p style="position: absolute;" class="p-text">Пройти тест</p>
+                        <div class="li-hov" class="p-text"></div>
+                    </a>
+                </li>
+                <li class="li-menu">
+                    <a href="/gallery" class="a-li">
+                        <p style="position: absolute;" class="p-text">Галерея</p>
+                        <div class="li-hov" class="p-text"></div>
+                    </a>
+                </li>
+                <li class="li-menu">
+                    <a href="zadan.html" class="a-li">
+                        <p style="position: absolute;" class="p-text">Задания</p>
+                        <div class="li-hov" class="p-text"></div>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="article-container-main">
+            <div class="article-out">
+                <h1 id="t" class="counter">Введение</h1>
+
+
+                <h1 style="margin: 0px; padding: 0.25em; font-variant-numeric: normal; font-variant-caps: small-caps; font-size: 1.75em; border-style: solid; border-color: rgb(89, 72, 70); border-image: initial; border-width: 2px 0px; text-align: center; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; background-color: rgb(255, 255, 255);">Что изучает физика?</h1><h3 class="sectionHead" style="margin: 0px; padding: 0px; font-family: general-text-format; background-color: rgb(255, 255, 255);">
+                    <p style="margin: 0.5em 0px; padding: 0px; font-size: 14px; font-family: sans-serif; line-height: inherit; color: rgb(34, 34, 34); font-weight: normal;"><br style="margin: 0px; padding: 0px; color: rgb(0, 0, 0); font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-size: 16px;"></p><table cellspacing="0" cellpadding="0" border="0" class="tblr" width="320" style="margin: 0px; padding: 0px; float: right; color: rgb(0, 0, 0); font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-size: 16px;"><tbody style="margin: 0px; padding: 0px;"><tr style="margin: 0px; padding: 0px;"><td align="right" style="margin: 0px; padding: 0px;"></td></tr></tbody></table><p style="margin: 0.95em 0.15em; padding: 0px; font-size: 16px; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-weight: normal; font-stretch: normal; line-height: normal; text-indent: 0.5em; text-align: justify;"><strong style="margin: 0px; padding: 0px;">Физика (от греческого "природа") - это наука об окружающем нас мире.</strong></p><p style="margin: 0.95em 0.15em; padding: 0px; font-size: 16px; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-weight: normal; font-stretch: normal; line-height: normal; text-indent: 0.5em; text-align: justify;">Физика - всеобъемлющая наука. Никакой процесс природы не находится вне физики. Физика описывает все: механику, электричество, магнетизм, оптику…</p><p style="margin: 0.95em 0.15em; padding: 0px; font-size: 16px; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-weight: normal; font-stretch: normal; line-height: normal; text-indent: 0.5em; text-align: justify;">Какие-то вещи очевидны для нас: притяжение, силы инерции и трения, кипение жидкости…</p><p style="margin: 0.95em 0.15em; padding: 0px; font-size: 16px; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-weight: normal; font-stretch: normal; line-height: normal; text-indent: 0.5em; text-align: justify;">Другие моменты природы не так понятны, хотя мы к ним давно "привыкли": электричество, магнетизм, различные излучения…</p><p style="margin: 0.95em 0.15em; padding: 0px; font-size: 16px; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-weight: normal; font-stretch: normal; line-height: normal; text-indent: 0.5em; text-align: justify;">Некоторые утверждения вообще с трудом даются пониманию: например, теория относительности А.Эйнштейна.</p><p style="margin: 0.95em 0.15em; padding: 0px; font-size: 16px; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-weight: normal; font-stretch: normal; line-height: normal; text-indent: 0.5em; text-align: justify;">Наблюдая, казалось бы, простые явления природы, мы редко задумываемся, почему происходит именно так, а не иначе:</p><ul style="margin: 0px; padding: 0px; list-style: none; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-size: 16px; font-weight: normal;">
+                        <li style="margin: 0.5em 2em; padding: 0px; list-style: none; font-size: 1em !important; font-family: general-text-format !important;">Почему идет снег?</li>
+                        <li style="margin: 0.5em 2em; padding: 0px; list-style: none; font-size: 1em !important; font-family: general-text-format !important;">Как мы слышим?</li>
+                        <li style="margin: 0.5em 2em; padding: 0px; list-style: none; font-size: 1em !important; font-family: general-text-format !important;">Для чего нам нужна кровь?</li>
+                        <li style="margin: 0.5em 2em; padding: 0px; list-style: none; font-size: 1em !important; font-family: general-text-format !important;">Почему звезды видны только ночью?</li>
+                        <li style="margin: 0.5em 2em; padding: 0px; list-style: none; font-size: 1em !important; font-family: general-text-format !important;">Почему, поскользнувшись, мы падаем назад, а споткнувшись - вперед?</li>
+                        <li style="margin: 0.5em 2em; padding: 0px; list-style: none; font-size: 1em !important; font-family: general-text-format !important;">Для чего у автомобилей колеса резиновые?</li>
+                        <li style="margin: 0.5em 2em;
+padding: 0px; list-style: none; font-size: 1em !important; font-family: general-text-format !important;">Почему нам тепло под одеялом?</li>
+                    </ul><p style="margin: 0.95em 0.15em; padding: 0px; font-size: 16px; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-weight: normal; font-stretch: normal; line-height: normal; text-indent: 0.5em; text-align: justify;">Физика - это исследование мира и его устройства.</p><p style="margin: 0.95em 0.15em; padding: 0px; font-size: 16px; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-weight: normal; font-stretch: normal; line-height: normal; text-indent: 0.5em; text-align: justify;">Классический курс изучения физики включает в себя, как правило, следующие разделы:</p><p style="margin: 0.95em 0.15em; padding: 0px; font-size: 16px; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-weight: normal; font-stretch: normal; line-height: normal; text-indent: 0.5em; text-align: justify;"><strong style="margin: 0px; padding: 0px;">Механика</strong>. Изучение принципов движения является первым шагом понимания физических процессов, которые проявляются в наблюдении, измерении и создания математической модели на основе полученных данных.</p><p style="margin: 0.95em 0.15em; padding: 0px; font-size: 16px; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-weight: normal; font-stretch: normal; line-height: normal; text-indent: 0.5em; text-align: justify;">Движение происходит под действием различных сил.&nbsp;<em style="margin: 0px; padding: 0px;">Законы приложения сил - основа механики</em>.</p><p style="margin: 0.95em 0.15em; padding: 0px; font-size: 16px; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-weight: normal; font-stretch: normal; line-height: normal; text-indent: 0.5em; text-align: justify;">При описании движения объектов нам "пригодятся" представления об&nbsp;<em style="margin: 0px; padding: 0px;">энергии</em>&nbsp;и&nbsp;<em style="margin: 0px; padding: 0px;">импульсе</em>. Помните закон сохранения энергии?<br style="margin: 0px; padding: 0px;"><em style="margin: 0px; padding: 0px;">"Энергия не берется из "ниоткуда" и не исчезает бесследно, - она просто переходит из одного вида в другой".</em></p><p style="margin: 0.95em 0.15em; padding: 0px; font-size: 16px; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-weight: normal; font-stretch: normal; line-height: normal; text-indent: 0.5em; text-align: justify;">Тепло и холод - неотъемлемые спутники нашей повседневной жизни.</p><ul style="margin: 0px; padding: 0px; list-style: none; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-size: 16px; font-weight: normal;"><li style="margin: 0.5em 2em; padding: 0px; list-style: none; font-size: 1em !important; font-family: general-text-format !important;">Почему утром бывает роса?</li><li style="margin: 0.5em 2em; padding: 0px; list-style: none; font-size: 1em !important; font-family: general-text-format !important;">Почему в холодную погоду запотевают очки при входе в теплое помещение?</li><li style="margin: 0.5em 2em; padding: 0px; list-style: none; font-size: 1em !important; font-family: general-text-format !important;">Почему в космосе холодно?</li></ul><p style="margin: 0.95em 0.15em; padding: 0px; font-size: 16px; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-weight: normal; font-stretch: normal; line-height: normal; text-indent: 0.5em; text-align: justify;">На эти и многие другие вопросы дает ответ&nbsp;<strong style="margin: 0px; padding: 0px;">термодинамика</strong>.</p><p style="margin: 0.95em 0.15em; padding: 0px; font-size: 16px; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-weight: normal; font-stretch: normal; line-height: normal; text-indent: 0.5em; text-align: justify;"><strong style="margin: 0px; padding: 0px;">Электричество и магнетизм</strong>&nbsp;вводят нас в более загадочный физический мир. Ведь действие этих физических явлений нельзя почувствовать "напрямую". Комбинируя электричество и магнетизм можно получить такое удивительное явление, как&nbsp;<em style="margin: 0px; padding: 0px;">свет</em>, который лежит в основе&nbsp;<em style="margin: 0px; padding: 0px;">видимости</em>&nbsp;всего мира.</p><p style="margin: 0.95em 0.15em; padding: 0px; font-size: 16px; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-weight: normal; font-stretch: normal; line-height: normal; text-indent: 0.5em; text-align: justify;">Надо сказать, что бОльшая часть физики связана с невидимым миром. Любое вещество состоит из атомов, увидеть которые не представляется возможным.</p><p style="margin: 0.95em 0.15em; padding: 0px; font-size: 16px; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-weight: normal; font-stretch: normal; line-height: normal; text-indent: 0.5em; text-align: justify;">"Венцом" изучения физических явлений можно считать&nbsp;<strong style="margin: 0px; padding: 0px;">теорию относительности А.Эйнштейна</strong>. А как же иначе? Ведь при достижении скоростей, близких к скорости света, с миром происходят удивительные вещи: масса стремится к бесконечности; время - пытается замереть на месте. А вы знаете, что происходит в "черных дырах"? Не поверите, - "там" время и пространство меняются местами!</p><p style="margin: 0.95em 0.15em; padding: 0px; font-size: 16px;
+font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-weight: normal; font-stretch: normal; line-height: normal; text-indent: 0.5em; text-align: justify;">Вот какая она удивительная и многообразная - наука ФИЗИКА!</p>
+                </h3><h2 style="margin: 0px; padding: 0px; font-variant-numeric: normal; font-variant-caps: small-caps; text-align: center; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; background-color: rgb(255, 255, 255);">Основные этапы развития физики</h2><h3 class="sectionHead" style="margin: 0px; padding: 0px; font-family: general-text-format; background-color: rgb(255, 255, 255);"><ul style="margin: 0px; padding: 0px; list-style: none; font-family: Georgia, &quot;Adobe Caslon Pro&quot;, &quot;Times New Roman&quot;, serif; font-size: 16px; font-weight: normal;"><li style="margin: 0.5em 2em; padding: 0px; list-style: none; font-size: 1em !important; font-family: general-text-format !important;">В 17 веке Исааком Ньютоном создается&nbsp;<em style="margin: 0px; padding: 0px;">классическая механика</em>.<br style="margin: 0px; padding: 0px;">&nbsp;</li><li style="margin: 0.5em 2em; padding: 0px; list-style: none; font-size: 1em !important; font-family: general-text-format !important;">К концу 19 века было в основном завершено формирование&nbsp;<em style="margin: 0px; padding: 0px;">классической физики</em>.<br style="margin: 0px; padding: 0px;">&nbsp;</li><li style="margin: 0.5em 2em; padding: 0px; list-style: none; font-size: 1em !important; font-family: general-text-format !important;">В начале 20 века в физике происходит революция, она становится&nbsp;<em style="margin: 0px; padding: 0px;">квантовой</em>&nbsp;(М. Планк, Э. Резерфорд, Н. Бор).<br style="margin: 0px; padding: 0px;">&nbsp;</li><li style="margin: 0.5em 2em; padding: 0px; list-style: none; font-size: 1em !important; font-family: general-text-format !important;">В 20-е годы была разработана&nbsp;<em style="margin: 0px; padding: 0px;">квантовая механика</em>&nbsp;— последовательная теория движения микрочастиц (Л. де Бройль, Э. Шредингер, В. Гейзенберг, В. Паули, П. Дирак). Одновременно появилось новое учение о пространстве и времени —&nbsp;<em style="margin: 0px; padding: 0px;">теория относительности</em>&nbsp;Альберта Эйнштейна, физика делается&nbsp;<em style="margin: 0px; padding: 0px;">релятивистской</em>.<br style="margin: 0px; padding: 0px;">&nbsp;</li><li style="margin: 0.5em 2em; padding: 0px; list-style: none; font-size: 1em !important; font-family: general-text-format !important;">Во 2-й половине 20 века происходит дальнейшее существенное преобразование физики, связанное с познанием структуры атомного ядра, свойств элементарных частиц (Э. Ферми, Р. Фейнман, М. Гелл-Ман), конденсированных сред (Д. Бардин, Л. Д. Ландау, Н. Н. Боголюбов).<br style="margin: 0px; padding: 0px;">&nbsp;</li><li style="margin: 0.5em 2em; padding: 0px; list-style: none; font-size: 1em !important; font-family: general-text-format !important;">Физика стала источником новых идей, преобразовавших современную технику:&nbsp;<em style="margin: 0px; padding: 0px;">ядерная энергетика</em>&nbsp;(И. В. Курчатов),&nbsp;<em style="margin: 0px; padding: 0px;">квантовая электроника</em>&nbsp;(Н. Г. Басов, А. М. Прохоров и Ч. Таунс), микроэлектроника, радиолокация возникли и развились в результате достижений физики.</li></ul></h3>
+            </div>
+        </div>
+        <div class="right-menu-container">
+            <li><span class="li-span">Оглавление</span></li>
+            <li class="ogl">
+                <ul id="li-count"></ul>
+            </li>
+        </div>
+</article>
+</body>
+</html>

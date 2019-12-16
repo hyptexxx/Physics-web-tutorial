@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "admin";
+}
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/stylesheets/stylesheet.css")">
+    <meta charset="utf-8">
+    <link rel="SHORTCUT ICON" href=@Url.Content("~/stylesheets/img/hd.png") type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/main_js.js")"></script>
+    <title>Учебное пособие</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-center">
+                <a href="/" style="display:block;" class="cont-img">
+                    <img src="@Url.Content("~/stylesheets/img/phy.png")" id="logo" style="width: 120%; user-select: none">
+                </a>
+                <h1>
+                    <p class="logo_text" style="text-align: center; font-size: 1.2em; color: #fff;">Электронное учебное пособие по дисциплине "Физика"</p>
+                    <p class="logo_text" style="text-align: center; font-size: 0.9em; color: #fff;">панель администратора - авторизация</p>
+                </h1>
+            </div>
+        </div>
+    </header>
+   
+    <div class="admin_panel_main">
+        <p>Введите ваши учетные данные для доступа в панель администратора</p>    
+        @using (Html.BeginForm("admin_panel_loginned", "Home", FormMethod.Post))
+        {
+           
+            <input type="text" class="admin_autorisation_input" oninput="checkForbiddenSymbolls(this)" placeholder="Введите логин" name="Login">
+            <input type="password" class="admin_autorisation_input" oninput="checkForbiddenSymbolls(this)" placeholder="Введите пароль" name="Password">
+            <input type="submit" class="admin_autorisation_button" value="Продолжить" />
+        }
+        <p>@ViewBag.Message</p>
+        <p id="error-message"></p>
+    </div>
+   
+    </body>
+</html>

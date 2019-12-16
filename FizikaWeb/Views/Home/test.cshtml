@@ -1,0 +1,175 @@
+﻿
+@{
+    ViewBag.Title = "test";
+}
+@{
+    Layout = "~/Views/Shared/RenderedHeader.cshtml";
+}
+@model List<string>
+<!DOCTYPE html>
+
+<article>
+    <div class="main-container">
+        <div id="back-to-head" onclick="bth()">
+            <img src="@Url.Content("~/stylesheets/img/down.png")" class="back-to-head-arrow">
+        </div>
+        <div class="left-menu-container">
+            <ul>
+                <li><span class="li-span">Меню</span></li>
+                <li class="li-menu">
+                    <a href="main.html" class="a-li">
+                        <p style="position: absolute;" class="p-text">Лекции</p>
+                        <div class="li-hov" class="p-text"></div>
+                    </a>
+
+                </li>
+                <li id="li-menu-hover-bl">
+                    <p style="position: relative;" class="div-menu-decl p-text">Разделы</p>
+                    @foreach (object q in Model)
+                    {
+                        <button onclick="doAjax(this), article_out_controller();" runat="server" id="aj" name="@q" class="div-menu text-format">"@q"</button>
+                    }
+                </li>
+                <li id="Y" class="li-menu">
+                    <a href="/test" class="a-li">
+                        <p style="position: absolute;" class="p-text">Пройти тест</p>
+                        <div class="li-hov" class="p-text"></div>
+                    </a>
+                </li>
+                <li class="li-menu">
+                    <a href="/gallery" class="a-li">
+                        <p style="position: absolute;" class="p-text">Галерея</p>
+                        <div class="li-hov" class="p-text"></div>
+                    </a>
+                </li>
+                <li class="li-menu">
+                    <a href="zadan.html" class="a-li">
+                        <p style="position: absolute;" class="p-text">Задания</p>
+                        <div class="li-hov" class="p-text"></div>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="article-container" style="      padding: 30px;
+                                                    margin-left: 290px;
+                                                    margin-right: 290px;
+                                                    background-color: #fff;">
+            <div class="article-out">
+                <div class="onetest" name="onetest">
+                    <font size="4" color="#0000">
+                        <b>
+                            <!-- nom vopr -->Вопрос №
+                            1
+
+                        </b>
+                    </font><br />
+
+                    <font color="#333333" saze="3"><p>  Если на тело действуют другие тела, то его скорость…  </p></font><div class="otv" id="torf1"></div> <input type=radio name=Q1><span name="aspan" class="aspan" onclick="getchecked(1,0)"> А. Не изменяется, оно находится в покое.</span><br> <input type=radio name=Q1><span name="aspan" class="aspan" onclick="getchecked(1,1)">  Б. Только увеличивается.</span><br> <input type=radio name=Q1><span name="aspan" class="aspan" onclick="getchecked(1,2)"> В. Не изменяется, оно движется равномерно и прямолинейно.</span><br> <input type=radio name=Q1><span name="aspan" class="aspan" onclick="getchecked(1,3)"> Г. Только уменьшается.</span><br> <input type=radio name=Q1><span name="aspan" class="aspan" onclick="getchecked(1,4)"> Д. Увеличивается или уменьшается</span><br>
+                </div>
+                <div class="onetest" name="onetest">
+                    <font size="4" color="#0000">
+                        <b>
+                            <!-- nom vopr -->Вопрос №
+                            2
+
+                        </b>
+                    </font><br />
+
+                    <font color="#333333" saze="3"><p>  Может ли тело двигаться равномерно, если на него не действуют  другие тела? </p></font><div class="otv" id="torf2"></div> <input type=radio name=Q2><span name="aspan" class="aspan" onclick="getchecked(2,0)"> не может</span><br> <input type=radio name=Q2><span name="aspan" class="aspan" onclick="getchecked(2,1)"> может, но не каждое тело</span><br> <input type=radio name=Q2><span name="aspan" class="aspan" onclick="getchecked(2,2)"> может</span><br>
+                </div>
+                <div class="onetest" name="onetest">
+                    <font size="4" color="#0000">
+                        <b>
+                            <!-- nom vopr -->Вопрос №
+                            3
+
+                        </b>
+                    </font><br />
+
+                    <font color="#333333" saze="3"><p>  Какое явление используется при катании детей на скейтбордах? </p></font><div class="otv" id="torf3"></div> <input type=radio name=Q3><span name="aspan" class="aspan" onclick="getchecked(3,0)"> Механическое явление.</span><br> <input type=radio name=Q3><span name="aspan" class="aspan" onclick="getchecked(3,1)"> Инерция.</span><br> <input type=radio name=Q3><span name="aspan" class="aspan" onclick="getchecked(3,2)"> Диффузия.</span><br>
+                </div>
+                <div class="onetest" name="onetest">
+                    <font size="4" color="#0000">
+                        <b>
+                            <!-- nom vopr -->Вопрос №
+                            4
+
+                        </b>
+                    </font><br />
+
+                    <font color="#333333" saze="3"><p>  Сила, возникающая при деформации тела, и направленная противоположно направлению смещения частиц при деформации,- </p></font><div class="otv" id="torf4"></div> <input type=radio name=Q4><span name="aspan" class="aspan" onclick="getchecked(4,0)"> сила тяжести</span><br> <input type=radio name=Q4><span name="aspan" class="aspan" onclick="getchecked(4,1)"> сила упругости</span><br> <input type=radio name=Q4><span name="aspan" class="aspan" onclick="getchecked(4,2)"> сила всемирного тяготения</span><br> <input type=radio name=Q4><span name="aspan" class="aspan" onclick="getchecked(4,3)"> вес тела</span><br>
+                </div>
+                <div class="onetest" name="onetest">
+                    <font size="4" color="#0000">
+                        <b>
+                            <!-- nom vopr -->Вопрос №
+                            5
+
+                        </b>
+                    </font><br />
+
+                    <font color="#333333" saze="3"><p>  ...- - это сила, с которой  земля притягивает  тело  </p></font><div class="otv" id="torf5"></div> <input type=radio name=Q5><span name="aspan" class="aspan" onclick="getchecked(5,0)">  Сила тяжести</span><br> <input type=radio name=Q5><span name="aspan" class="aspan" onclick="getchecked(5,1)"> Вес тела</span><br> <input type=radio name=Q5><span name="aspan" class="aspan" onclick="getchecked(5,2)"> Сила упругости</span><br> <input type=radio name=Q5><span name="aspan" class="aspan" onclick="getchecked(5,3)"> Сила всемирного тяготения</span><br>
+                </div>
+                <div class="onetest" name="onetest">
+                    <font size="4" color="#0000">
+                        <b>
+                            <!-- nom vopr -->Вопрос №
+                            6
+
+                        </b>
+                    </font><br />
+
+                    <font color="#333333" saze="3"><p>  Сила упругости при растяжении (сжатии) прямо  пропорциональна удлинению тела F=kx ,где k-жесткость, х-удлинение. <br> В этом заключается закон </p></font><div class="otv" id="torf6"></div> <input type=radio name=Q6><span name="aspan" class="aspan" onclick="getchecked(6,0)"> Гука</span><br> <input type=radio name=Q6><span name="aspan" class="aspan" onclick="getchecked(6,1)"> Ньютона</span><br> <input type=radio name=Q6><span name="aspan" class="aspan" onclick="getchecked(6,2)"> Кеплера</span><br> <input type=radio name=Q6><span name="aspan" class="aspan" onclick="getchecked(6,3)"> всемирного тяготения</span><br>
+                </div>
+                <div class="onetest" name="onetest">
+                    <font size="4" color="#0000">
+                        <b>
+                            <!-- nom vopr -->Вопрос №
+                            7
+
+                        </b>
+                    </font><br />
+
+                    <font color="#333333" saze="3"><p>  Коэффициент пропорциональности  в законе Гука  F=kx зависит от формы и размеров тела, а также от материала. <br>  Он численно равен силе упругости при растяжении тела на 1м. Называется ...вычисляется по формуле k=Fупр/x </p></font><div class="otv" id="torf7"></div> <input type=radio name=Q7><span name="aspan" class="aspan" onclick="getchecked(7,0)"> жесткость</span><br> <input type=radio name=Q7><span name="aspan" class="aspan" onclick="getchecked(7,1)"> упругость</span><br>
+                </div>
+                <div class="onetest" name="onetest">
+                    <font size="4" color="#0000">
+                        <b>
+                            <!-- nom vopr -->Вопрос №
+                            8
+
+                        </b>
+                    </font><br />
+
+                    <font color="#333333" saze="3"><p>  Деформация тела- это изменение его  формы или размеров  </p></font><div class="otv" id="torf8"></div> <input type=radio name=Q8><span name="aspan" class="aspan" onclick="getchecked(8,0)"> нет</span><br> <input type=radio name=Q8><span name="aspan" class="aspan" onclick="getchecked(8,1)"> да</span><br>
+                </div>
+                <div class="onetest" name="onetest">
+                    <font size="4" color="#0000">
+                        <b>
+                            <!-- nom vopr -->Вопрос №
+                            9
+
+                        </b>
+                    </font><br />
+
+                    <font color="#333333" saze="3"><p>  Деформация, которая исчезает после прекращения действия внешних сил,  </p></font><div class="otv" id="torf9"></div> <input type=radio name=Q9><span name="aspan" class="aspan" onclick="getchecked(9,0)"> упругая</span><br> <input type=radio name=Q9><span name="aspan" class="aspan" onclick="getchecked(9,1)"> пластичная</span><br>
+                </div>
+                <div class="onetest" name="onetest">
+                    <font size="4" color="#0000">
+                        <b>
+                            <br>
+                            <div class="V" onclick="EndOfTest(); return false;">Проверить</div>
+                </div>
+            </div>
+        </div>
+        <div class="right-menu-container">
+            <li><span class="li-span">Оглавление</span></li>
+            <li class="ogl">
+                <ul id="li-count"></ul>
+            </li>
+        </div>
+    </div>
+</article>
+</body>
+</html>

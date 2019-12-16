@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "RenderedHeader";
+}
+
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/stylesheets/stylesheet.css")">
+    <meta charset="utf-8">
+    <link rel="SHORTCUT ICON" href=@Url.Content("~/stylesheets/img/hd.png") type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/main_js.js")"></script>
+    <title>Учебное пособие</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+
+            <div style=" bottom: 0;
+                             position: absolute;
+                             right: 0;">
+                <input id="search_inp" type="text" oninput="article_out_controller(), DoAjaxSearch(this)" placeholder="Введите название книги" style="    border: none;
+                                                                                                                    height: 32px;
+                                                                                                                    width: 400px;
+                                                                                                                    padding: 10px;
+                                                                                                                    background: white;
+                                                                                                                    outline:none" />
+                <input type="submit" onclick=" article_out_controller(), DoAjaxSearch()" value="Поиск" style="height: 32px;
+                                                                background: #fff;
+                                                                border: none;
+                                                                margin-right: 47px;
+                                                                margin-bottom: 34px;
+                                                                width: 68px;" />
+            </div>
+
+            <div class="header-center">
+                <a href="/" style="display:block;" class="cont-img">
+                    <img src="@Url.Content("~/stylesheets/img/phy.png")" id="logo" style="width: 120%; user-select: none">
+                </a>
+                <h1>
+                    <p class="logo_text" style="text-align: center; font-size: 1.2em; color: #fff;">Электронное учебное пособие по дисциплине "Физика"</p>
+                </h1>
+            </div>
+        </div>
+    </header>
+    @RenderBody()

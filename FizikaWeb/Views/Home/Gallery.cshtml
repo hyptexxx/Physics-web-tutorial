@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "Gallery";
+}
+@{
+    Layout = "~/Views/Shared/RenderedHeader.cshtml";
+}
+@model List<string>
+<!DOCTYPE html>
+    <article>
+        <div class="main-container">
+            <div id="back-to-head" onclick="bth()">
+                <img src="@Url.Content("~/stylesheets/img/down.png")" class="back-to-head-arrow">
+            </div>
+            <div class="left-menu-container">
+                <ul>
+                    <li><span class="li-span">Меню</span></li>
+                    <li class="li-menu">
+                        <a href="/" class="a-li">
+                            <p style="position: absolute;" class="p-text">Главная</p>
+                            <div class="li-hov" class="p-text"></div>
+                        </a>
+
+                    </li>
+                    <li id="li-menu-hover-bl">
+                        <p style="position: relative;" class="div-menu-decl p-text">Разделы</p>
+                        @foreach (object q in Model)
+                        {
+                            <button onclick="doAjax(this), article_out_controller();" runat="server" id="aj" name="@q" class="div-menu text-format">"@q"</button>
+                        }
+                    </li>
+                    <li id="Y" class="li-menu">
+                        <a href="/test" class="a-li">
+                            <p style="position: absolute;" class="p-text">Пройти тест</p>
+                            <div class="li-hov" class="p-text"></div>
+                        </a>
+                    </li>
+                    <li class="li-menu">
+                        <a href="/gallery" class="a-li">
+                            <p style="position: absolute;" class="p-text">Галерея</p>
+                            <div class="li-hov" class="p-text"></div>
+                        </a>
+                    </li>
+                    <li class="li-menu">
+                        <a href="zadan.html" class="a-li">
+                            <p style="position: absolute;" class="p-text">Задания</p>
+                            <div class="li-hov" class="p-text"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="article-container-img">
+                <div class="article-out-img" style="columns: 2;">
+
+                    <div class="column-1">
+                        <div class="img-gallery">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/AFR4LGNZNRo" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="img-gallery">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/BEPxdzr-6Ck?list=PLS93_pp5BAdVikDwmRmbaJ-iJtLn29snu" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="img-gallery">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/-rxmUPckP3A" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="column-2">
+                        <div class="img-gallery">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/TmHpGlhs1UU" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="img-gallery">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/b4iLofTY9pk" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-menu-container" style="display:none">
+                <li><span class="li-span">Оглавление</span></li>
+                <li class="ogl">
+                    <ul id="li-count"></ul>
+                </li>
+            </div>
+        </div>
+    </article>
+</body>
+<script>
+    $(function () {
+        $('.pics').glisse({
+            changeSpeed: 550,
+            speed: 500,
+            effect:'bounce',
+            fullscreen: true
+    });
+    });
+</script>
+</html>
